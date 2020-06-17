@@ -1,4 +1,4 @@
-server.port: 19000
+server.port: 18000
 eureka:
   client:
     registerWithEureka: false
