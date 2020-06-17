@@ -3,19 +3,19 @@ kind: Deployment
 metadata:
   name: eureka-server-deployment
   labels:
-    app: nginx
+    app: eureka-server
 spec:
   replicas: 3
   selector:
     matchLabels:
-      app: nginx
+      app: eureka-server
   template:
     metadata:
       labels:
-        app: nginx
+        app: eureka-server
     spec:
       containers:
         - name: eureka-server
-          image: eureka-server:202006
+          image: yyqbest/eureka-server:latest
           ports:
-            - containerPort: 80
+            - containerPort: 18000
