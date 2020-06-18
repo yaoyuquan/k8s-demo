@@ -2,4 +2,4 @@ server.port: 19001
 spring.application.name: consumer
 eureka:
   client:
-    serviceUrl.defaultZone: http://${EUREKA-SERVER-SERVICE_SERVICE_HOST:127.0.0.1}:${EUREKA-SERVER-SERVICE_SERVICE_HOST:18000}/eureka
+    serviceUrl.defaultZone: http://${EUREKA_SERVER_SERVICE_SERVICE_HOST:127.0.0.1}:${EUREKA_SERVER_SERVICE_SERVICE_HOST:18000}/eureka
