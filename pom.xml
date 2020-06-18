@@ -17,22 +17,6 @@
 	<version>0.0.1</version>
 	<packaging>pom</packaging>
 
-	<properties>
-		<eureka.server.host>localhost</eureka.server.host>
-		<eureka.server.port>18000</eureka.server.port>
-	</properties>
-
-	<profiles>
-		<profile>
-			<id>k8s</id>
-			<properties>
-				<eureka.server.host>localhost</eureka.server.host>
-				<eureka.server.port>18000</eureka.server.port>
-			</properties>
-		</profile>
-	</profiles>
-
-
 	<build>
 		<plugins>
 			<plugin>
