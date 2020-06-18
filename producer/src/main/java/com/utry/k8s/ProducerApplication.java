@@ -9,11 +9,17 @@ public class ProducerApplication {
 
     public static void main(String[] args) {
 
-        String host = System.getenv("EUREKA_SERVER_SERVICE_SERVICE_HOST");
-        String port = System.getenv("EUREKA_SERVER_SERVICE_SERVICE_PORT");
+        String eurekaHost = System.getenv("EUREKA_SERVER_SERVICE_SERVICE_HOST");
+        String eurekaPort = System.getenv("EUREKA_SERVER_SERVICE_SERVICE_PORT");
 
-        if(StringUtils.isNotEmpty(host) && StringUtils.isNotEmpty(port)) {
-            System.setProperty("eureka.client.serviceUrl.defaultZone", "http://" + host + ":" + port + "/eureka");
+        if(StringUtils.isNotEmpty(eurekaHost) && StringUtils.isNotEmpty(eurekaPort)) {
+            System.setProperty("eureka.client.serviceUrl.defaultZone", "http://" + eurekaHost + ":" + eurekaPort + "/eureka");
+        }
+
+        String serviceHost = System.getenv("PRODUCER_SERVICE_SERVICE_HOST");
+
+        if(StringUtils.isNotEmpty(serviceHost)) {
+            System.setProperty("eureka.instance.ipAddress", serviceHost);
         }
 
         new SpringApplication(ProducerApplication.class).run(args);
