@@ -1,5 +1,6 @@
 package com.utry.k8s;
 
+import org.apache.commons.lang.StringUtils;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.cloud.client.loadbalancer.LoadBalanced;
@@ -16,6 +17,15 @@ public class ConsumerApplication {
     }
 
     public static void main(String[] args) {
+
+        String host = System.getenv("EUREKA_SERVER_SERVICE_SERVICE_HOST");
+        String port = System.getenv("EUREKA_SERVER_SERVICE_SERVICE_PORT");
+
+        if(StringUtils.isNotEmpty(host) && StringUtils.isNotEmpty(port)) {
+            System.setProperty("eureka.client.serviceUrl.defaultZone", "http://" + host + ":" + port + "/eureka");
+        }
+
+
         new SpringApplication(ConsumerApplication.class).run(args);
     }
 }
