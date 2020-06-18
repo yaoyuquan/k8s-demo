@@ -10,4 +10,4 @@ spec:
     # By default and for convenience, the `targetPort` is set to the same value as the `port` field.
     - port: 18000
       targetPort: 18000
-      nodePort: 18000
+      nodePort: 30000
