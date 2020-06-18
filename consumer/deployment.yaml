@@ -1,21 +1,19 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: eureka-server-deployment
-  labels:
-    app: eureka-server
+  name: consumer-deployment
 spec:
   replicas: 3
   selector:
     matchLabels:
-      app: eureka-server
+      app: consumer
   template:
     metadata:
       labels:
-        app: eureka-server
+        app: consumer
     spec:
       containers:
-        - name: eureka-server
-          image: yyqbest/eureka-server:latest
+        - name: consumer
+          image: yyqbest/consumer:latest
           ports:
-            - containerPort: 18000
+            - containerPort: 19001
