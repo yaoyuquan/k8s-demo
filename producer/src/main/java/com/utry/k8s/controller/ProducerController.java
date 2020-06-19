@@ -11,7 +11,7 @@ public class ProducerController {
     @GetMapping
     public String producer() {
         long timestamp = System.currentTimeMillis();
-        return "send producer time : " + timestamp;
+        return "send producer time : " + timestamp + " update";
     }
 
 }
