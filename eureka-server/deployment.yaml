@@ -16,6 +16,6 @@ spec:
     spec:
       containers:
         - name: eureka-server
-          image: yyqbest/eureka-server:latest
+          image: yaoyuquan/eureka-server:latest
           ports:
             - containerPort: 18000

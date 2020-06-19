@@ -14,6 +14,6 @@ spec:
     spec:
       containers:
         - name: consumer
-          image: yyqbest/consumer:latest
+          image: yaoyuquan/consumer:latest
           ports:
             - containerPort: 19001
